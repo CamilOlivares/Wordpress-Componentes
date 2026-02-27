@@ -1,0 +1,62 @@
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 20px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1200px; margin: 0 auto;">
+    <!-- Card - Oficina -->
+    <div style="width: 280px; border-radius: 16px; overflow: hidden; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); box-shadow: 0 6px 15px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); border: 1px solid rgba(255,255,255,0.4); position: relative; padding-bottom: 60px;">
+      <!-- Aqui puedes poner un link para cliquear en el Card --> 
+        <a href="https://tudominio.cl" target="_blank" 
+           style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+            <div style="padding: 25px; text-align: center; background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%); transition: all 0.4s ease;">
+               <!-- icono interactivo obtenido de "lordicon.com" el cual puedes cambiar o modificar obtenendo el codigo desde su sitio web-->
+                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/alzqexpi.json"
+                    trigger="hover"
+                    colors="primary:#ffffff,secondary:#e6d5ff"
+                    style="width:80px;height:80px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2))">
+                </lord-icon>
+            </div>
+            <div style="padding: 25px; text-align: center;">
+                <h3 style="color: #2b2d42; margin-top: 0; margin-bottom: 15px; font-size: 1.4em; font-weight: 700;">Insumos de Oficina</h3>
+                <p style="color: #4a5568; line-height: 1.6; font-size: 0.95em;">
+                    Todo lo que tu empresa necesita para un espacio de trabajo eficiente, desde papelería hasta mobiliario y equipos tecnológicos.
+                </p>
+            </div>
+        </a>
+        <!-- Botón con efecto hover mejorado -->
+        <div style="padding: 15px; text-align: center; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 90%;">
+          <!-- Aqui puedes poner un link para cliquear en el boton --> 
+            <a href="https://tudominio.cl" target="_blank"
+               style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; border-radius: 8px; background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%); color: white; font-weight: bold; text-decoration: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+                Ver Catálogo
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<script>
+// Efecto hover en la tarjeta
+document.querySelectorAll('[style*="width: 280px;"]').forEach(card => {
+    card.addEventListener('mouseover', function() {
+        this.style.transform = 'translateY(-10px) scale(1.03)';
+        this.style.boxShadow = '0 12px 28px rgba(0,0,0,0.15)';
+    });
+    card.addEventListener('mouseout', function() {
+        this.style.transform = 'none';
+        this.style.boxShadow = '0 6px 15px rgba(0,0,0,0.08)';
+    });
+});
+
+// Efecto hover en el botón
+document.querySelectorAll('a[href="https://rubicospa.cl/wp-content/uploads/2025/03/Catalogo-Oficina.pdf"]').forEach(button => {
+    button.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.filter = 'brightness(1.3)';
+        this.style.boxShadow = '0 6px 15px rgba(142, 45, 226, 0.5)';
+    });
+    button.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+        this.style.filter = 'brightness(1)';
+        this.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+    });
+});
+</script>
