@@ -5,7 +5,6 @@
   justify-content: center; 
   padding: 40px 20px;
   font-family: 'SF Pro Display', sans-serif;
-  background-color: #0f0f12; /* Fondo oscuro para que luzca el glassmorphism */
 }
 
 /* --- TARJETA GLASSMORPHISM --- */
@@ -15,7 +14,7 @@
   padding: 2.5em;
   display: flex;
   flex-direction: column;
-  gap: 1em; /* Reducido un poco para dar espacio al precio */
+  gap: 1.5em;
   background: rgba(255, 255, 255, 0.03); 
   backdrop-filter: blur(15px); 
   -webkit-backdrop-filter: blur(15px); 
@@ -33,17 +32,16 @@
   text-align: center !important; 
 }
 
-.card__subheading {
+.card__price {
   font-size: 0.95em;
   font-weight: 600;
   color: #af40ff !important; 
   text-transform: uppercase;
   text-align: center !important; 
   display: block !important;
-  margin-bottom: 0.5em;
 }
 
-/* --- LISTA --- */
+/* --- LISTA (A LA IZQUIERDA) --- */
 .card__bullets {
   list-style: none !important;
   padding: 0 !important;
@@ -56,11 +54,12 @@
 
 .card__bullets li {
   margin-bottom: 12px !important;
-  font-size: 0.95rem !important;
+  font-size: 1rem !important;
   color: rgba(255, 255, 255, 0.75) !important; 
   display: flex !important;
   align-items: flex-start !important;
   text-align: left !important;
+  width: 100% !important;
 }
 
 .card__bullets li::before {
@@ -70,51 +69,39 @@
   flex-shrink: 0 !important;
 }
 
-/* --- SECCIÓN DE PRECIO --- */
-.card__price-container {
-  text-align: center;
-  margin: 1em 0 1.5em 0;
-}
-
-.card__price-value {
-  display: block;
-  font-size: 2.5em;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.card__price-currency {
-  font-size: 0.5em;
-  vertical-align: super;
-  margin-right: 2px;
-  color: #00ddeb;
-}
-
 /* --- BOTÓN MORADO NEÓN --- */
 .cta-button {
   display: block !important;
   text-align: center !important;
   text-decoration: none !important;
   color: #fff !important;
+  
+  /* Fondo Morado Base */
   background: linear-gradient(145deg, #af40ff, #5b42f3) !important;
   border: 2px solid #af40ff !important;
+  
   padding: 1.2rem !important;
-  border-radius: 50px !important;
+  border-radius: 50px !important; /* Botón pastilla para que sea más moderno */
   font-weight: 700 !important;
   font-size: 1rem !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
   transition: all 0.4s ease-in-out !important;
-  box-shadow: 0 0 15px rgba(175, 64, 255, 0.3) !important;
+  box-shadow: 0 0 15px rgba(175, 64, 255, 0.3) !important; /* Brillo base sutil */
 }
 
-/* --- EFECTOS HOVER --- */
+/* --- EFECTO HOVER FLUORESCENTE --- */
 .card-cyber:hover .cta-button {
+  /* Cambio de fondo al pasar el mouse */
   background: linear-gradient(145deg, #d68fff, #8a77ff) !important;
-  border-color: #00ddeb !important;
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(0, 221, 235, 0.6), 0 0 50px rgba(175, 64, 255, 0.5) !important;
+  color: #fff !important;
+  border-color: #00ddeb !important; /* Borde cian neón */
+  transform: translateY(-3px); /* Pequeña elevación */
+  
+  /* RESPLANDOR FLUORESCENTE */
+  box-shadow: 
+    0 0 25px rgba(0, 221, 235, 0.6), /* Glow cian intenso */
+    0 0 50px rgba(175, 64, 255, 0.5) !important; /* Glow morado externo */
 }
 
 .card-cyber:hover {
@@ -122,29 +109,69 @@
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+
+/* Estilos para que el precio se vea increíble */
+.card__price-container {
+  text-align: center;
+  margin: 0.5em 0 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card__price-label {
+  font-size: 0.8rem;
+  color: #00ddeb; /* Cian neón para la etiqueta */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.card__price-value {
+  font-size: 2.8em; /* Más grande para que destaque */
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  /* Efecto de brillo sutil */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card__price-currency {
+  font-size: 0.5em;
+  color: #af40ff; /* Morado para el símbolo $ */
+  vertical-align: super;
+  margin-right: 2px;
+}
 </style>
 
 <div class="cards-wrapper">
   <div class="card-cyber">
     <div>
-      <p class="card__heading">Light</p>
-      <p class="card__subheading">Sitio Informativo</p>
+      <p class="card__heading">Tienda Virtual PRO</p>
+      <p class="card__price">E-Commerce</p>
       
       <ul class="card__bullets">
-        <li>Diseño tradicional y estático.</li>
+        <li>Diseño Personalizado.</li>
         <li>Diseño Responsive (adaptable).</li>
-        <li>Optimización de Carga.</li>
+        <li>Optimización de Carga y SEO.</li>
         <li>Botón de WhatsApp.</li>
-        <li>30 días de Garantía y Mantención.</li>
+        <li>Integración con Redes Sociales.</li>
+        <li>Formulario de Contacto.</li>
+        <li>Carga de hasta 50 Productos.</li>
+        <li>60 días de Garantía y Mantención.</li>
       </ul>
     </div>
-
-    <div class="card__price-container">
-      <span class="card__price-value">
-        <span class="card__price-currency">$</span>99.900
-      </span>
-    </div>
     
-    <a class="cta-button" href="https://store.digitaldevs.cl/producto/sitio-web-light/">Ver Más</a>
+
+
+<div class="card__price-container">
+  <span class="card__price-label">Inversión:</span>
+  <span class="card__price-value">
+    <span class="card__price-currency">$</span>99.900
+  </span>
+</div>
+    
+    <a class="cta-button" href="https://store.digitaldevs.cl/producto/tienda-virtual-e-commerce/">Ver Más</a>
   </div>
 </div>
